@@ -14,6 +14,17 @@ void insertion_sort_list(listint_t **list)
 	{
 		return;
 	}
+	if ((*list)->next->next == NULL)
+	{
+		if ((*list)->n > (*list)->next->n)
+		{
+			node = *list;
+			*list = (*list)->next;
+			(*list)->next = node;
+			print_list(*list);
+		}
+		return;
+	}
 	prev = *list;
 	current = *list;
 	restPrev = prev->prev;
