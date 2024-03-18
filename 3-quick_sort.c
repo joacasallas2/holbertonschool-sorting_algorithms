@@ -11,6 +11,22 @@ void quick_sort(int *array, size_t size)
 {
 	int pivot, index = 0, aux = 0, j = size - 1, i = 1, indexPivot;
 
+	if (array == NULL || array[1] == '\0')
+	{
+		return;
+	}
+	if (array[2] == '\0')
+	{
+		if (array[0] > array[1])
+		{
+			aux = array[1];
+			array[1] = array[0];
+			array[0] = aux;
+			print_array(array, size);
+		}
+		return;
+	}
+
 	indexPivot = (int)size - i;
 	pivot = array[index];
 	j = indexPivot;
