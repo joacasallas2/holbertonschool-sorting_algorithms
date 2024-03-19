@@ -14,7 +14,7 @@ void shell_sort(int *array, size_t size)
 	{
 		return;
 	}
-	if (array[2] == '\0')
+	if (array[2] == '\0' || size == 1)
 	{
 		if (array[0] > array[1])
 		{
