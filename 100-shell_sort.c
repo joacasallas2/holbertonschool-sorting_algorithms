@@ -10,6 +10,22 @@ void shell_sort(int *array, size_t size)
 {
 	int gap, i, j, temp;
 
+	if (array == NULL || array[1] == '\0')
+	{
+		return;
+	}
+	if (array[2] == '\0')
+	{
+		if (array[0] > array[1])
+		{
+			temp = array[1];
+			array[1] = array[0];
+			array[0] = temp;
+			print_array(array, size);
+		}
+		return;
+	}
+
 	gap = 1;
 	while (gap < (int)size / 3)
 	{
